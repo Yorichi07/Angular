@@ -1,0 +1,36 @@
+What is Angular?
+It is a front-end framework build using the JavaScript by Google.
+
+It helps with building interactive, modern web user interfaces. It's also a collection of tools & features (CLI, Debugging Tools, IDE Plugins).
+
+Why Angular?
+Simplifies the process of building complex, interactive web user interfaces.
+1) Write declaritive code - Making the code more readable and easier to understand by focusing on what the application should do rather than how to do it.
+2) Separation of concerns via components - Ensures a clear separation of concerns, enabling modular development, easier maintenance, and better reusability of code.
+3) OOPs concepts & principles -  Leads to more scalable and maintainable applications.
+4) Use Typescript - Typescript is a JS Superset - an extension of JS. It support strong & strict typing unlike "Vanilla JS". It enforces types and prevent unexpected value type changes. With TS you can often  detect errors early on during developement.
+
+npm will act as package manager for Angular application.
+
+Install AngularCLI - npm install -g @angular/cli@17
+Make your first angular application - ng new first-angular-app
+Run npm start in terminal of your app, you will get a Local address of your application.
+
+String Interpolation {{}}- to refer element in html from .ts component. Ex- <span>{{selectedUser.name}}</span>
+
+Property Binding - a key Angular feature that allows you to bind element properties to dynamic values.
+Ex- <img [src]="'assests/users/'+selectedUser.avatar"/>
+
+Since "Property Binding" wants to target properties (and not attributes), that can be a problem. That's why Angular offers a slight variation of the "Property Binding" syntax that does allow you to bind attributes to dynamic values.
+
+It looks like this:
+
+<div 
+  role="progressbar" 
+  [attr.aria-valuenow]="currentVal" 
+  [attr.aria-valuemax]="maxVal">...</div>
+By adding attr in front of the attribute name you want to bind dynamically, you're "telling" Angular that it shouldn't try to find a property with the specified name but instead bind the respective attribute - in the example above, the aria-valuenow and aria-valuemax attributes would be bound dynamically.
+
+There are two approches for updating state of Angular Application after a change occur:
+1) Zone.js - Works automatically, no special instructions required. Supported since Angular2
+2) signal - requires usage of special "signal" instruction & code. Support since Angular16
